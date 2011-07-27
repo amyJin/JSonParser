@@ -1,13 +1,21 @@
 
-The program JSonObjParser.cc takes a JSON file as input and changes it into a JSON object. The program JSonObj.c provides methods to interact with the JSON object to get the specific values and vectors. 
+The program JSonObjParser.cc takes a JSON file as input and changes it into a JSON object. The program JSonObj.cc provides methods to interact with the JSON object to get the specific values and vectors. 
 
 We are using boost_1_44_0.
 
 To use this JSON parser you will need to have the g++ and boost_1_44_0 installed on your system.
 
-The source code is at /install/src.
+building system:
 
-The test code is at /install/example.
+mkdir build   /** create a build directory */
+cd build
+cmake ..      /** prepration for make */ 
+make          /** build the system */
+make install  /** create install directory */
+
+The source code is at install/src.
+
+The test code is at install/example.
 
 
 The ingredients are:
@@ -15,7 +23,7 @@ The ingredients are:
 	JSonObjParser.h		(a header file that will be included in your program)
 	JSonObjParser.cc	(actual parsing source code)
 	JSonObj.h		(header file that will be included in your program)
-	JSonObj.c		(three functions:
+	JSonObj.cc		(three functions:
 					T getValue<T>(keyName);
 					std::vector<T> getVector<T>(keyName);			
 					std::string getType(keyName);
